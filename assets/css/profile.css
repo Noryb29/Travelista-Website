@@ -1,0 +1,313 @@
+:root {
+    --primary-color: #6B73FF;
+    --primary-light: #8B93FF;
+    --secondary-color: #000;
+    --text-color: #333;
+    --text-light: #666;
+    --light-bg: #f8f9fa;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --border-color: #e9ecef;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #6B73FF 0%, #8B5CF6 100%);
+}
+
+body {
+    background: var(--light-bg);
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+    margin-top: 200px;
+}
+
+/* .profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    z-index: 0;
+} */
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-picture-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.profile-picture-container:hover {
+    transform: scale(1.02);
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.profile-picture-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    border: 4px solid white;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-picture-upload {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    border: 2px solid white;
+}
+
+.profile-picture-upload:hover {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+}
+
+.profile-header h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.user-email {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.user-email i {
+    color: var(--primary-color);
+}
+
+.profile-form {
+    display: grid;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--light-bg);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    background-color: var(--light-bg);
+    cursor: not-allowed;
+    opacity: 0.8;
+    border-color: var(--border-color);
+}
+
+.form-group input:focus:not(:disabled),
+.form-group select:focus:not(:disabled) {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.15);
+    background: white;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-edit,
+.btn-update,
+.btn-cancel {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-edit {
+    background: var(--primary-color);
+    color: white;
+    margin: 1rem auto;
+    padding: 1rem 2.5rem;
+}
+
+.btn-update {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-cancel {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-edit:hover,
+.btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-cancel:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-edit:active,
+.btn-update:active,
+.btn-cancel:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Loading animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .profile-picture-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .user-email {
+        font-size: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-edit,
+    .btn-update,
+    .btn-cancel {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .profile-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for form elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
